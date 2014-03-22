@@ -762,7 +762,7 @@
 	<include condition="Library.HasContent(Music) + ![IsEmpty(skin.string(musicwidget)) | Skin.HasSetting(nomusicwidget)]">mf_contentmusic</include>
 	<include condition="System.HasAddon(script.favourites) + ![IsEmpty(skin.string(favouriteswidget)) | Skin.HasSetting(nofavouriteswidget)]">mf_contentfavourites</include>
 	<include condition="!IsEmpty(skin.string(mymenu1widget))">mf_contentmymenu1</include>
-	<include condition="!IsEmpty(skin.string(mymenu2widget))">mf_contentmymenu2</include>
+	<include condition="!IsEmpty(skin.string(youtubewidget))">mf_contentyoutube</include>
 	<include condition="System.HasAddon(script.randomandlastitems) + SubString(skin.string(menu1.master),vpl) + !Skin.HasSetting(novpl1widget)">mf_contentvpl1</include>
 	<include condition="System.HasAddon(script.randomandlastitems) + SubString(skin.string(menu2.master),vpl) + !Skin.HasSetting(novpl2widget)">mf_contentvpl2</include>
 	<include condition="System.HasAddon(script.randomandlastitems) + SubString(skin.string(menu3.master),vpl) + !Skin.HasSetting(novpl3widget)">mf_contentvpl3</include>

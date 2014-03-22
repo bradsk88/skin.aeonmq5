@@ -3321,14 +3321,14 @@
 	<include name="mf_contentyoutube">
 	<control type="image">
     <include>widgets_back</include>
-	<visible>StringCompare(Container(9000).ListItem.Property(id),mymenu2)</visible>
+	<visible>StringCompare(Container(9000).ListItem.Property(id),youtube)</visible>
 	</control>
 	<control type="group">
 	<posx>30</posx>
 	<posy>360</posy>
 	<control type="panel" id="510"><!-- YouTube -->
 	<include>panel_layout</include>
-	<visible>StringCompare(Container(9000).ListItem.Property(id),mymenu2)</visible>
+	<visible>StringCompare(Container(9000).ListItem.Property(id),youtube)</visible>
 	<content>
 	<item>
 	<label fallback="31014">$VAR[value_menu2201.label]</label>

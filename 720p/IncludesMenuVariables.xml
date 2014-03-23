@@ -3671,9 +3671,7 @@
 	</variable>
 	<!--......-->
 	<variable name="value_menu2201.label">
-	<value condition="IsEmpty(skin.string(menu2201.label)) + !StringCompare(skin.string(menu2201.master),addons)">$INFO[skin.string(menu2201.defaultlabel)]</value>
-	<value condition="IsEmpty(skin.string(menu2201.label)) + StringCompare(skin.string(menu2201.master),addons)">$INFO[system.addontitle(skin.string(menu2201.path))]</value>
-	<value condition="!IsEmpty(skin.string(menu2201.label))">$INFO[skin.string(menu2201.label)]</value>
+	<value>New Subscription Videos</value>
 	</variable>
 	<variable name="value_menu2201.thumb">
     <value condition="IsEmpty(skin.string(menu2201.thumb)) + StringCompare(skin.string(menu2201.master),favs)">$INFO[skin.string(menu2201.icon)]</value>
@@ -3681,11 +3679,7 @@
 	<value condition="!IsEmpty(skin.string(menu2201.thumb))">$INFO[skin.string(menu2201.thumb)]</value>
 	</variable>
 	<variable name="value_menu2201.action">
-	<value condition="![StringCompare(skin.string(menu2201.master),vplaylist) | StringCompare(skin.string(menu2201.master),aplaylist) | StringCompare(skin.string(menu2201.master),vnodes) | StringCompare(skin.string(menu2201.master),favs) | StringCompare(skin.string(menu2201.master),addons)]">$INFO[skin.string(menu2201.action)]</value>
-	<value condition="StringCompare(skin.string(menu2201.master),vplaylist) | StringCompare(skin.string(menu2201.master),vnodes)">ActivateWindow(videolibrary,$INFO[skin.string(menu2201.path)],return)</value>
-	<value condition="StringCompare(skin.string(menu2201.master),aplaylist)">ActivateWindow(musiclibrary,$INFO[skin.string(menu2201.path)],return)</value>
-	<value condition="StringCompare(skin.string(menu2201.master),favs)">$INFO[skin.string(menu2201.path)]</value>
-	<value condition="StringCompare(skin.string(menu2201.master),addons)">RunAddon($INFO[skin.string(menu2201.path)])</value>
+	<value>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/subscriptions/new&amp;user_feed=newsubscriptions,return)</value>
 	</variable>
 	<variable name="value_menu2202.label">
 	<value condition="IsEmpty(skin.string(menu2202.label)) + !StringCompare(skin.string(menu2202.master),addons)">$INFO[skin.string(menu2202.defaultlabel)]</value>

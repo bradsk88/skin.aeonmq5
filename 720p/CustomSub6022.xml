@@ -22,7 +22,7 @@
 	<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
 	<onclick condition="Window.IsVisible(Home)">Dialog.Close(6022)</onclick>
 	<onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu2201.action])</onclick>
-	<visible>![IsEmpty(skin.string(menu2201.master)) | SubString(skin.string(menu2201.visible),off)] | Window.IsVisible(6000)</visible>
+	<visible>true</visible>
 	</item>
 	<item>
 	<label fallback="31014">$VAR[value_menu2202.label]</label>

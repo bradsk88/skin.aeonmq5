@@ -4100,7 +4100,7 @@
 	<label fallback="31014">$VAR[value_menu2201.label]</label>
 	<icon>$VAR[value_menu2201.thumb]</icon>
 	<onclick>$VAR[value_menu2201.action]</onclick>
-	<visible>![IsEmpty(skin.string(menu2201.master)) | SubString(skin.string(menu2201.visible),off)]</visible>
+	<visible>true</visible>
 	</item>
 	<item>
 	<label fallback="31014">$VAR[value_menu2202.label]</label>

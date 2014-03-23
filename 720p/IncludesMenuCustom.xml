@@ -1571,10 +1571,10 @@
 	<include>DefaultReset</include>
 	</item>
 	<item>
-	<label>$LOCALIZE[31075] 2</label><!-- Meu Menu 2 --><!-- 6022 -->
-	<label2>$LOCALIZE[31075] 2</label2>
+	<label>$LOCALIZE[32001]</label><!-- Meu Menu 2 --><!-- 6022 -->
+	<label2>$LOCALIZE[32001]</label2>
 	<property name="id">custom</property>
-	<onclick>Skin.SetString($INFO[skin.string(custom_master)],mymenu2)</onclick>
+	<onclick>Skin.SetString($INFO[skin.string(custom_master)],youtube)</onclick>
 	<onclick>Skin.SetString($INFO[skin.string(custom_action)],SetFocus(510))</onclick>
 	<include>DefaultReset</include>
 	</item>

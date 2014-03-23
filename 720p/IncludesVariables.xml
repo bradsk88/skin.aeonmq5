@@ -27,7 +27,7 @@
 	<value condition="StringCompare(Container(9000).ListItem.Property(subid),canceltimer)">6012</value>
 	<value condition="StringCompare(Container(9000).ListItem.Property(subid),logoff)">6012</value>
 	<value condition="StringCompare(Container(9000).ListItem.Property(subid),mymenu1)">6021</value>
-	<value condition="StringCompare(Container(9000).ListItem.Property(subid),mymenu2)">6022</value>
+	<value condition="StringCompare(Container(9000).ListItem.Property(subid),youtube)">6022</value>
 	<value condition="StringCompare(Container(9000).ListItem.Property(subid),videoplaylists)">6025</value>
 	<value condition="StringCompare(Container(9000).ListItem.Property(subid),disc)">6030</value>	
 	<value condition="StringCompare(Container(9000).ListItem.Property(subid),ejecttray)">6031</value>	

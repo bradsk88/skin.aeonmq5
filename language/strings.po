@@ -4219,3 +4219,11 @@ msgid ""
 "Original Aeon. A big thanks to the master djh_ for creating the masterpiece "
 "that is original Aeon."
 msgstr "El skin Aeon original y su nombre, son propiedad intelectual de djh_. El Aeon MQ 5 sin embargo, tiene un código independiente y no utiliza ningún tipo de textura del Aeon original. Muchas gracias a djh_ por la creación de la obra maestra que es el Aeon original."
+
+msgctxt "#32000"
+msgid "NEW EPISODES"
+msgstr "NEW EPISODES"
+
+msgctxt "#32001"
+msgid "YouTube"
+msgstr "YouTube"

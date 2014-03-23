@@ -3567,18 +3567,18 @@
 	</control>
 	</control>
 	</include>
-<!-- ################################################################################ Meu Menu 2 ################################################################################ -->
-	<include name="mf_contentmymenu2">
+<!-- ################################################################################ YouTube ################################################################################ -->
+	<include name="mf_contentyoutube">
 	<control type="image"><!-- Fundo -->
     <include>widgets_back</include>
-	<visible>StringCompare(Container(9000).ListItem.Property(id),mymenu2)</visible>
+	<visible>StringCompare(Container(9000).ListItem.Property(id),youtube)</visible>
 	</control>
 	<control type="group">
 	<posx>30</posx>
 	<posy>360</posy>
 	<control type="panel" id="510"><!-- Meu Menu 2 -->
 	<include>panel_layout</include>
-	<visible>StringCompare(Container(9000).ListItem.Property(id),mymenu2)</visible>
+	<visible>StringCompare(Container(9000).ListItem.Property(id),youtube)</visible>
 	<content>
 	<item>
 	<label fallback="31014">$VAR[value_menu2201.label]</label>

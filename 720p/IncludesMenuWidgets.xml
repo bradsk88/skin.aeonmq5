@@ -938,15 +938,265 @@
 	</control>
 	<control type="button" id="5111">
 	<include>InvisibleButton</include>
+	<onfocus condition="SubString(skin.string(mftvshows_list),aired)">Skin.SetString(mftvshows_list,latest)</onfocus>
 	<onfocus condition="SubString(skin.string(mftvshows_list),latest)">Skin.SetString(mftvshows_list,random)</onfocus>
 	<onfocus condition="SubString(skin.string(mftvshows_list),random)">Skin.SetString(mftvshows_list,inprogress)</onfocus>
 	<onfocus condition="SubString(skin.string(mftvshows_list),inprogress)">Skin.SetString(mftvshows_list,aired)</onfocus>
-	<onfocus condition="SubString(skin.string(mftvshows_list),aired)">Skin.SetString(mftvshows_list,latest)</onfocus>
 	<onfocus>SetFocus(5100)</onfocus>
 	</control>
 	<control type="group">
 	<posx>30</posx>
 	<posy>360</posy>
+	
+	<control type="panel" id="510"><!-- Recently AIRED (not added) -->
+	<include>panel_layout</include>
+	<visible>SubString(Container(9000).ListItem.Property(id),tvshow) + SubString(skin.string(mftvshows_list),aired)</visible>
+	<content>
+	<item>
+	<label>[COLOR=$VAR[value_menucolorlabel]]$LOCALIZE[31665] - [/COLOR]$INFO[Window(0).Property(RecommendedEpisode.1.Title)]</label>
+	<label2>$INFO[Window(0).Property(RecommendedEpisode.1.TVShowTitle)]</label2>
+	<icon>$INFO[Window(0).Property(RecommendedEpisode.1.Art(tvshow.poster))]</icon>
+	<property name="Thumbnail">$INFO[Window(0).Property(RecommendedEpisode.1.Art(thumb))]</property>
+	<property name="Fanart">$INFO[Window(0).Property(RecommendedEpisode.1.Art(tvshow.fanart))]</property>
+	<property name="Genre">$INFO[Window(0).Property(RecommendedEpisode.1.Genre)]</property>
+	<property name="Runtime">$INFO[Window(0).Property(RecommendedEpisode.1.Runtime)]</property>
+	<property name="VideoRating">$INFO[Window(0).Property(RecommendedEpisode.1.Rating)]</property>
+	<property name="Plot">$INFO[Window(0).Property(RecommendedEpisode.1.Plot)]</property>
+	<property name="Year">$INFO[Window(0).Property(RecommendedEpisode.1.Premiered)]</property>
+	<property name="Mpaa">$INFO[Window(0).Property(RecommendedEpisode.1.MPAA)]</property>
+	<property name="File">$INFO[Window(0).Property(RecommendedEpisode.1.File)]</property>
+	<property name="Codec">$INFO[Window(0).Property(RecommendedEpisode.1.VideoCodec)]</property>
+	<property name="EpisodeNumber">$INFO[Window(0).Property(RecommendedEpisode.1.EpisodeNo)]</property>
+	<property name="Percent">$INFO[Window(0).Property(RecommendedEpisode.1.PercentPlayed)]</property>
+	<property name="Progress">inprogress</property>
+	<onclick>$INFO[Window(0).Property(RecommendedEpisode.1.Play)]</onclick>
+	<visible>![IsEmpty(Window(0).Property(RecommendedEpisode.1.Title)) | Skin.HasSetting(noprogresswidget)]</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(0).Property(RecentAiredEpisode.1.Title)]</label>
+	<label2>$INFO[Window(0).Property(RecentAiredEpisode.1.TVShowTitle)]</label2>
+	<icon>$INFO[Window(0).Property(RecentAiredEpisode.1.Art(tvshow.poster))]</icon>
+	<property name="Thumbnail">$INFO[Window(0).Property(RecentAiredEpisode.1.Art(thumb))]</property>
+	<property name="Fanart">$INFO[Window(0).Property(RecentAiredEpisode.1.Art(tvshow.fanart))]</property>
+	<property name="Genre">$INFO[Window(0).Property(RecentAiredEpisode.1.Genre)]</property>
+	<property name="Runtime">$INFO[Window(0).Property(RecentAiredEpisode.1.Runtime)]</property>
+	<property name="VideoRating">$INFO[Window(0).Property(RecentAiredEpisode.1.Rating)]</property>
+	<property name="Plot">$INFO[Window(0).Property(RecentAiredEpisode.1.Plot)]</property>
+	<property name="Year">$INFO[Window(0).Property(RecentAiredEpisode.1.Premiered)]</property>
+	<property name="Mpaa">$INFO[Window(0).Property(RecentAiredEpisode.1.MPAA)]</property>
+	<property name="File">$INFO[Window(0).Property(RecentAiredEpisode.1.File)]</property>
+	<property name="Codec">$INFO[Window(0).Property(RecentAiredEpisode.1.VideoCodec)]</property>
+	<property name="EpisodeNumber">$INFO[Window(0).Property(RecentAiredEpisode.1.EpisodeNo)]</property>
+	<onclick>$INFO[Window(0).Property(RecentAiredEpisode.1.Play)]</onclick>
+	<visible>!IsEmpty(Window(0).Property(RecentAiredEpisode.1.Title))</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(0).Property(RecentAiredEpisode.2.Title)]</label>
+	<label2>$INFO[Window(0).Property(RecentAiredEpisode.2.TVShowTitle)]</label2>
+	<icon>$INFO[Window(0).Property(RecentAiredEpisode.2.Art(tvshow.poster))]</icon>
+	<property name="Thumbnail">$INFO[Window(0).Property(RecentAiredEpisode.2.Art(thumb))]</property>
+	<property name="Fanart">$INFO[Window(0).Property(RecentAiredEpisode.2.Art(tvshow.fanart))]</property>
+	<property name="Genre">$INFO[Window(0).Property(RecentAiredEpisode.2.Genre)]</property>
+	<property name="Runtime">$INFO[Window(0).Property(RecentAiredEpisode.2.Runtime)]</property>
+	<property name="VideoRating">$INFO[Window(0).Property(RecentAiredEpisode.2.Rating)]</property>
+	<property name="Plot">$INFO[Window(0).Property(RecentAiredEpisode.2.Plot)]</property>
+	<property name="Year">$INFO[Window(0).Property(RecentAiredEpisode.2.Premiered)]</property>
+	<property name="Mpaa">$INFO[Window(0).Property(RecentAiredEpisode.2.MPAA)]</property>
+	<property name="File">$INFO[Window(0).Property(RecentAiredEpisode.2.File)]</property>
+	<property name="Codec">$INFO[Window(0).Property(RecentAiredEpisode.2.VideoCodec)]</property>
+	<property name="EpisodeNumber">$INFO[Window(0).Property(RecentAiredEpisode.2.EpisodeNo)]</property>
+	<onclick>$INFO[Window(0).Property(RecentAiredEpisode.2.Play)]</onclick>
+	<visible>!IsEmpty(Window(0).Property(RecentAiredEpisode.2.Title))</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(0).Property(RecentAiredEpisode.3.Title)]</label>
+	<label2>$INFO[Window(0).Property(RecentAiredEpisode.3.TVShowTitle)]</label2>
+	<icon>$INFO[Window(0).Property(RecentAiredEpisode.3.Art(tvshow.poster))]</icon>
+	<property name="Thumbnail">$INFO[Window(0).Property(RecentAiredEpisode.3.Art(thumb))]</property>
+	<property name="Fanart">$INFO[Window(0).Property(RecentAiredEpisode.3.Art(tvshow.fanart))]</property>
+	<property name="Genre">$INFO[Window(0).Property(RecentAiredEpisode.3.Genre)]</property>
+	<property name="Runtime">$INFO[Window(0).Property(RecentAiredEpisode.3.Runtime)]</property>
+	<property name="VideoRating">$INFO[Window(0).Property(RecentAiredEpisode.3.Rating)]</property>
+	<property name="Plot">$INFO[Window(0).Property(RecentAiredEpisode.3.Plot)]</property>
+	<property name="Year">$INFO[Window(0).Property(RecentAiredEpisode.3.Premiered)]</property>
+	<property name="Mpaa">$INFO[Window(0).Property(RecentAiredEpisode.3.MPAA)]</property>
+	<property name="File">$INFO[Window(0).Property(RecentAiredEpisode.3.File)]</property>
+	<property name="Codec">$INFO[Window(0).Property(RecentAiredEpisode.3.VideoCodec)]</property>
+	<property name="EpisodeNumber">$INFO[Window(0).Property(RecentAiredEpisode.3.EpisodeNo)]</property>
+	<onclick>$INFO[Window(0).Property(RecentAiredEpisode.3.Play)]</onclick>
+	<visible>!IsEmpty(Window(0).Property(RecentAiredEpisode.3.Title))</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(0).Property(RecentAiredEpisode.4.Title)]</label>
+	<label2>$INFO[Window(0).Property(RecentAiredEpisode.4.TVShowTitle)]</label2>
+	<icon>$INFO[Window(0).Property(RecentAiredEpisode.4.Art(tvshow.poster))]</icon>
+	<property name="Thumbnail">$INFO[Window(0).Property(RecentAiredEpisode.4.Art(thumb))]</property>
+	<property name="Fanart">$INFO[Window(0).Property(RecentAiredEpisode.4.Art(tvshow.fanart))]</property>
+	<property name="Genre">$INFO[Window(0).Property(RecentAiredEpisode.4.Genre)]</property>
+	<property name="Runtime">$INFO[Window(0).Property(RecentAiredEpisode.4.Runtime)]</property>
+	<property name="VideoRating">$INFO[Window(0).Property(RecentAiredEpisode.4.Rating)]</property>
+	<property name="Plot">$INFO[Window(0).Property(RecentAiredEpisode.4.Plot)]</property>
+	<property name="Year">$INFO[Window(0).Property(RecentAiredEpisode.4.Premiered)]</property>
+	<property name="Mpaa">$INFO[Window(0).Property(RecentAiredEpisode.4.MPAA)]</property>
+	<property name="File">$INFO[Window(0).Property(RecentAiredEpisode.4.File)]</property>
+	<property name="Codec">$INFO[Window(0).Property(RecentAiredEpisode.4.VideoCodec)]</property>
+	<property name="EpisodeNumber">$INFO[Window(0).Property(RecentAiredEpisode.4.EpisodeNo)]</property>
+	<onclick>$INFO[Window(0).Property(RecentAiredEpisode.4.Play)]</onclick>
+	<visible>!IsEmpty(Window(0).Property(RecentAiredEpisode.4.Title)) + [SubString(skin.string(widgetsnumber),4) + IsEmpty(Window(0).Property(RecommendedEpisode.1.Title)) | SubString(skin.string(widgetsnumber),8) | SubString(skin.string(widgetsnumber),12)]</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(0).Property(RecentAiredEpisode.5.Title)]</label>
+	<label2>$INFO[Window(0).Property(RecentAiredEpisode.5.TVShowTitle)]</label2>
+	<icon>$INFO[Window(0).Property(RecentAiredEpisode.5.Art(tvshow.poster))]</icon>
+	<property name="Thumbnail">$INFO[Window(0).Property(RecentAiredEpisode.5.Art(thumb))]</property>
+	<property name="Fanart">$INFO[Window(0).Property(RecentAiredEpisode.5.Art(tvshow.fanart))]</property>
+	<property name="Genre">$INFO[Window(0).Property(RecentAiredEpisode.5.Genre)]</property>
+	<property name="Runtime">$INFO[Window(0).Property(RecentAiredEpisode.5.Runtime)]</property>
+	<property name="VideoRating">$INFO[Window(0).Property(RecentAiredEpisode.5.Rating)]</property>
+	<property name="Plot">$INFO[Window(0).Property(RecentAiredEpisode.5.Plot)]</property>
+	<property name="Year">$INFO[Window(0).Property(RecentAiredEpisode.5.Premiered)]</property>
+	<property name="Mpaa">$INFO[Window(0).Property(RecentAiredEpisode.5.MPAA)]</property>
+	<property name="File">$INFO[Window(0).Property(RecentAiredEpisode.5.File)]</property>
+	<property name="Codec">$INFO[Window(0).Property(RecentAiredEpisode.5.VideoCodec)]</property>
+	<property name="EpisodeNumber">$INFO[Window(0).Property(RecentAiredEpisode.5.EpisodeNo)]</property>
+	<onclick>$INFO[Window(0).Property(RecentAiredEpisode.5.Play)]</onclick>
+	<visible>!IsEmpty(Window(0).Property(RecentAiredEpisode.5.Title)) + [SubString(skin.string(widgetsnumber),8) | SubString(skin.string(widgetsnumber),12)]</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(0).Property(RecentAiredEpisode.6.Title)]</label>
+	<label2>$INFO[Window(0).Property(RecentAiredEpisode.6.TVShowTitle)]</label2>
+	<icon>$INFO[Window(0).Property(RecentAiredEpisode.6.Art(tvshow.poster))]</icon>
+	<property name="Thumbnail">$INFO[Window(0).Property(RecentAiredEpisode.6.Art(thumb))]</property>
+	<property name="Fanart">$INFO[Window(0).Property(RecentAiredEpisode.6.Art(tvshow.fanart))]</property>
+	<property name="Genre">$INFO[Window(0).Property(RecentAiredEpisode.6.Genre)]</property>
+	<property name="Runtime">$INFO[Window(0).Property(RecentAiredEpisode.6.Runtime)]</property>
+	<property name="VideoRating">$INFO[Window(0).Property(RecentAiredEpisode.6.Rating)]</property>
+	<property name="Plot">$INFO[Window(0).Property(RecentAiredEpisode.6.Plot)]</property>
+	<property name="Year">$INFO[Window(0).Property(RecentAiredEpisode.6.Premiered)]</property>
+	<property name="Mpaa">$INFO[Window(0).Property(RecentAiredEpisode.6.MPAA)]</property>
+	<property name="File">$INFO[Window(0).Property(RecentAiredEpisode.6.File)]</property>
+	<property name="Codec">$INFO[Window(0).Property(RecentAiredEpisode.6.VideoCodec)]</property>
+	<property name="EpisodeNumber">$INFO[Window(0).Property(RecentAiredEpisode.6.EpisodeNo)]</property>
+	<onclick>$INFO[Window(0).Property(RecentAiredEpisode.6.Play)]</onclick>
+	<visible>!IsEmpty(Window(0).Property(RecentAiredEpisode.6.Title)) + [SubString(skin.string(widgetsnumber),8) | SubString(skin.string(widgetsnumber),12)]</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(0).Property(RecentAiredEpisode.7.Title)]</label>
+	<label2>$INFO[Window(0).Property(RecentAiredEpisode.7.TVShowTitle)]</label2>
+	<icon>$INFO[Window(0).Property(RecentAiredEpisode.7.Art(tvshow.poster))]</icon>
+	<property name="Thumbnail">$INFO[Window(0).Property(RecentAiredEpisode.7.Art(thumb))]</property>
+	<property name="Fanart">$INFO[Window(0).Property(RecentAiredEpisode.7.Art(tvshow.fanart))]</property>
+	<property name="Genre">$INFO[Window(0).Property(RecentAiredEpisode.7.Genre)]</property>
+	<property name="Runtime">$INFO[Window(0).Property(RecentAiredEpisode.7.Runtime)]</property>
+	<property name="VideoRating">$INFO[Window(0).Property(RecentAiredEpisode.7.Rating)]</property>
+	<property name="Plot">$INFO[Window(0).Property(RecentAiredEpisode.7.Plot)]</property>
+	<property name="Year">$INFO[Window(0).Property(RecentAiredEpisode.7.Premiered)]</property>
+	<property name="Mpaa">$INFO[Window(0).Property(RecentAiredEpisode.7.MPAA)]</property>
+	<property name="File">$INFO[Window(0).Property(RecentAiredEpisode.7.File)]</property>
+	<property name="Codec">$INFO[Window(0).Property(RecentAiredEpisode.7.VideoCodec)]</property>
+	<property name="EpisodeNumber">$INFO[Window(0).Property(RecentAiredEpisode.7.EpisodeNo)]</property>
+	<onclick>$INFO[Window(0).Property(RecentAiredEpisode.7.Play)]</onclick>
+	<visible>!IsEmpty(Window(0).Property(RecentAiredEpisode.7.Title)) + [SubString(skin.string(widgetsnumber),8) | SubString(skin.string(widgetsnumber),12)]</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(0).Property(RecentAiredEpisode.8.Title)]</label>
+	<label2>$INFO[Window(0).Property(RecentAiredEpisode.8.TVShowTitle)]</label2>
+	<icon>$INFO[Window(0).Property(RecentAiredEpisode.8.Art(tvshow.poster))]</icon>
+	<property name="Thumbnail">$INFO[Window(0).Property(RecentAiredEpisode.8.Art(thumb))]</property>
+	<property name="Fanart">$INFO[Window(0).Property(RecentAiredEpisode.8.Art(tvshow.fanart))]</property>
+	<property name="Genre">$INFO[Window(0).Property(RecentAiredEpisode.8.Genre)]</property>
+	<property name="Runtime">$INFO[Window(0).Property(RecentAiredEpisode.8.Runtime)]</property>
+	<property name="VideoRating">$INFO[Window(0).Property(RecentAiredEpisode.8.Rating)]</property>
+	<property name="Plot">$INFO[Window(0).Property(RecentAiredEpisode.8.Plot)]</property>
+	<property name="Year">$INFO[Window(0).Property(RecentAiredEpisode.8.Premiered)]</property>
+	<property name="Mpaa">$INFO[Window(0).Property(RecentAiredEpisode.8.MPAA)]</property>
+	<property name="File">$INFO[Window(0).Property(RecentAiredEpisode.8.File)]</property>
+	<property name="Codec">$INFO[Window(0).Property(RecentAiredEpisode.8.VideoCodec)]</property>
+	<property name="EpisodeNumber">$INFO[Window(0).Property(RecentAiredEpisode.8.EpisodeNo)]</property>
+	<onclick>$INFO[Window(0).Property(RecentAiredEpisode.8.Play)]</onclick>
+	<visible>!IsEmpty(Window(0).Property(RecentAiredEpisode.8.Title)) + [SubString(skin.string(widgetsnumber),8) | SubString(skin.string(widgetsnumber),12)]</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(0).Property(RecentAiredEpisode.9.Title)]</label>
+	<label2>$INFO[Window(0).Property(RecentAiredEpisode.9.TVShowTitle)]</label2>
+	<icon>$INFO[Window(0).Property(RecentAiredEpisode.9.Art(tvshow.poster))]</icon>
+	<property name="Thumbnail">$INFO[Window(0).Property(RecentAiredEpisode.9.Art(thumb))]</property>
+	<property name="Fanart">$INFO[Window(0).Property(RecentAiredEpisode.9.Art(tvshow.fanart))]</property>
+	<property name="Genre">$INFO[Window(0).Property(RecentAiredEpisode.9.Genre)]</property>
+	<property name="Runtime">$INFO[Window(0).Property(RecentAiredEpisode.9.Runtime)]</property>
+	<property name="VideoRating">$INFO[Window(0).Property(RecentAiredEpisode.9.Rating)]</property>
+	<property name="Plot">$INFO[Window(0).Property(RecentAiredEpisode.9.Plot)]</property>
+	<property name="Year">$INFO[Window(0).Property(RecentAiredEpisode.9.Premiered)]</property>
+	<property name="Mpaa">$INFO[Window(0).Property(RecentAiredEpisode.9.MPAA)]</property>
+	<property name="File">$INFO[Window(0).Property(RecentAiredEpisode.9.File)]</property>
+	<property name="Codec">$INFO[Window(0).Property(RecentAiredEpisode.9.VideoCodec)]</property>
+	<property name="EpisodeNumber">$INFO[Window(0).Property(RecentAiredEpisode.9.EpisodeNo)]</property>
+	<onclick>$INFO[Window(0).Property(RecentAiredEpisode.9.Play)]</onclick>
+	<visible>!IsEmpty(Window(0).Property(RecentAiredEpisode.9.Title)) + SubString(skin.string(widgetsnumber),12)</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(0).Property(RecentAiredEpisode.10.Title)]</label>
+	<label2>$INFO[Window(0).Property(RecentAiredEpisode.10.TVShowTitle)]</label2>
+	<icon>$INFO[Window(0).Property(RecentAiredEpisode.10.Art(tvshow.poster))]</icon>
+	<property name="Thumbnail">$INFO[Window(0).Property(RecentAiredEpisode.10.Art(thumb))]</property>
+	<property name="Fanart">$INFO[Window(0).Property(RecentAiredEpisode.10.Art(tvshow.fanart))]</property>
+	<property name="Genre">$INFO[Window(0).Property(RecentAiredEpisode.10.Genre)]</property>
+	<property name="Runtime">$INFO[Window(0).Property(RecentAiredEpisode.10.Runtime)]</property>
+	<property name="VideoRating">$INFO[Window(0).Property(RecentAiredEpisode.10.Rating)]</property>
+	<property name="Plot">$INFO[Window(0).Property(RecentAiredEpisode.10.Plot)]</property>
+	<property name="Year">$INFO[Window(0).Property(RecentAiredEpisode.10.Premiered)]</property>
+	<property name="Mpaa">$INFO[Window(0).Property(RecentAiredEpisode.10.MPAA)]</property>
+	<property name="File">$INFO[Window(0).Property(RecentAiredEpisode.10.File)]</property>
+	<property name="Codec">$INFO[Window(0).Property(RecentAiredEpisode.10.VideoCodec)]</property>
+	<property name="EpisodeNumber">$INFO[Window(0).Property(RecentAiredEpisode.10.EpisodeNo)]</property>
+	<onclick>$INFO[Window(0).Property(RecentAiredEpisode.10.Play)]</onclick>
+	<visible>!IsEmpty(Window(0).Property(RecentAiredEpisode.10.Title)) + SubString(skin.string(widgetsnumber),12)</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(0).Property(RecentAiredEpisode.11.Title)]</label>
+	<label2>$INFO[Window(0).Property(RecentAiredEpisode.11.TVShowTitle)]</label2>
+	<icon>$INFO[Window(0).Property(RecentAiredEpisode.11.Art(tvshow.poster))]</icon>
+	<property name="Thumbnail">$INFO[Window(0).Property(RecentAiredEpisode.11.Art(thumb))]</property>
+	<property name="Fanart">$INFO[Window(0).Property(RecentAiredEpisode.11.Art(tvshow.fanart))]</property>
+	<property name="Genre">$INFO[Window(0).Property(RecentAiredEpisode.11.Genre)]</property>
+	<property name="Runtime">$INFO[Window(0).Property(RecentAiredEpisode.11.Runtime)]</property>
+	<property name="VideoRating">$INFO[Window(0).Property(RecentAiredEpisode.11.Rating)]</property>
+	<property name="Plot">$INFO[Window(0).Property(RecentAiredEpisode.11.Plot)]</property>
+	<property name="Year">$INFO[Window(0).Property(RecentAiredEpisode.11.Premiered)]</property>
+	<property name="Mpaa">$INFO[Window(0).Property(RecentAiredEpisode.11.MPAA)]</property>
+	<property name="File">$INFO[Window(0).Property(RecentAiredEpisode.11.File)]</property>
+	<property name="Codec">$INFO[Window(0).Property(RecentAiredEpisode.11.VideoCodec)]</property>
+	<property name="EpisodeNumber">$INFO[Window(0).Property(RecentAiredEpisode.11.EpisodeNo)]</property>
+	<onclick>$INFO[Window(0).Property(RecentAiredEpisode.11.Play)]</onclick>
+	<visible>!IsEmpty(Window(0).Property(RecentAiredEpisode.11.Title)) + SubString(skin.string(widgetsnumber),12)</visible>
+	</item>
+	<item>
+	<label>$INFO[Window(0).Property(RecentAiredEpisode.12.Title)]</label>
+	<label2>$INFO[Window(0).Property(RecentAiredEpisode.12.TVShowTitle)]</label2>
+	<icon>$INFO[Window(0).Property(RecentAiredEpisode.12.Art(tvshow.poster))]</icon>
+	<property name="Thumbnail">$INFO[Window(0).Property(RecentAiredEpisode.12.Art(thumb))]</property>
+	<property name="Fanart">$INFO[Window(0).Property(RecentAiredEpisode.12.Art(tvshow.fanart))]</property>
+	<property name="Genre">$INFO[Window(0).Property(RecentAiredEpisode.12.Genre)]</property>
+	<property name="Runtime">$INFO[Window(0).Property(RecentAiredEpisode.12.Runtime)]</property>
+	<property name="VideoRating">$INFO[Window(0).Property(RecentAiredEpisode.12.Rating)]</property>
+	<property name="Plot">$INFO[Window(0).Property(RecentAiredEpisode.12.Plot)]</property>
+	<property name="Year">$INFO[Window(0).Property(RecentAiredEpisode.12.Premiered)]</property>
+	<property name="Mpaa">$INFO[Window(0).Property(RecentAiredEpisode.12.MPAA)]</property>
+	<property name="File">$INFO[Window(0).Property(RecentAiredEpisode.12.File)]</property>
+	<property name="Codec">$INFO[Window(0).Property(RecentAiredEpisode.12.VideoCodec)]</property>
+	<property name="EpisodeNumber">$INFO[Window(0).Property(RecentAiredEpisode.12.EpisodeNo)]</property>
+	<onclick>$INFO[Window(0).Property(RecentAiredEpisode.12.Play)]</onclick>
+	<visible>!IsEmpty(Window(0).Property(RecentAiredEpisode.12.Title)) + [IsEmpty(Window(0).Property(RecommendedEpisode.1.Title)) | Skin.HasSetting(noprogresswidget)] + SubString(skin.string(widgetsnumber),12)</visible>
+	</item>
+	<item>
+	<icon>DefaultVideoPoster.png</icon>
+	<onclick>noop</onclick>
+	<visible>IsEmpty(Window(0).Property(RecentAiredEpisode.1.Title))</visible>
+	</item>
+	</content>
+	</control>
+	
+	
 	<control type="panel" id="510"><!-- Seriados Recentes -->
 	<include>panel_layout</include>
 	<visible>SubString(Container(9000).ListItem.Property(id),tvshow) + SubString(skin.string(mftvshows_list),latest)</visible>
@@ -1694,7 +1944,7 @@
 	</control>
 	</control>
 	</include>
-	<!-- ################################################################################ Concertos ################################################################################ -->
+	<!-- ############################################################################### Concertos ################################################################################ -->
 	<include name="mf_contentconcerts">
 	<control type="image"><!-- Fundo -->
     <include>widgets_back</include>
@@ -1721,7 +1971,7 @@
 	<control type="group">
 	<posx>30</posx>
 	<posy>360</posy>
-	<control type="panel" id="510"><!-- Concertos Recentes -->
+	<control type="panel" id="510"><!-- Recently Added Concerts / Concertos Recentes -->
 	<include>panel_layout</include>
 	<visible>SubString(Container(9000).ListItem.Property(id),concert) + SubString(skin.string(mfconcerts_list),latest)</visible>
 	<content>
@@ -1915,7 +2165,7 @@
 	</item>
 	</content>
 	</control>
-	<control type="panel" id="510"><!-- Concertos Random -->
+	<control type="panel" id="510"><!-- Random Concerts / Concertos Random -->
 	<include>panel_layout</include>
 	<visible>SubString(Container(9000).ListItem.Property(id),concert) + SubString(skin.string(mfconcerts_list),random)</visible>
 	<content>
@@ -2109,7 +2359,7 @@
 	</item>
 	</content>
 	</control>
-	<control type="panel" id="510"><!-- Concertos Em Progresso -->
+	<control type="panel" id="510"><!-- Concerts In Progress / Concertos Em Progresso -->
 	<include>panel_layout</include>
 	<visible>SubString(Container(9000).ListItem.Property(id),concert) + SubString(skin.string(mfconcerts_list),inprogress)</visible>
 	<content>
@@ -2302,7 +2552,7 @@
 	</control>
 	</control>
 	</include>
-	<!-- ################################################################################ Musicas ################################################################################ -->
+	<!-- ########################################################################### Concerts # Musicas ########################################################################### -->
 	<include name="mf_contentmusic">
 	<control type="image"><!-- Fundo -->
     <include>widgets_back</include>
@@ -2332,7 +2582,7 @@
 	<control type="group">
 	<posx>30</posx>
 	<posy>360</posy>
-	<control type="panel" id="510"><!--- Musicas Recentes/Faixas -->
+	<control type="panel" id="510"><!--- Recently Added Songs # Musicas Recentes/Faixas -->
 	<include>panel_layout</include>
 	<visible>SubString(Container(9000).ListItem.Property(id),music) + SubString(skin.string(mfmusic_list),latestsong)</visible>
 	<content>
@@ -2463,7 +2713,7 @@
 	</item>
 	</content>
 	</control>
-	<control type="panel" id="510"><!--- Musicas Recentes/Albums -->
+	<control type="panel" id="510"><!--- Recently Added Albums # Musicas Recentes/Albums -->
 	<include>panel_layout</include>
 	<visible>SubString(Container(9000).ListItem.Property(id),music) + SubString(skin.string(mfmusic_list),latestalbum)</visible>
 	<content>
@@ -2630,7 +2880,7 @@
 	</item>
 	</content>
 	</control>
-	<control type="panel" id="510"><!--- Musicas Random/Faixas -->
+	<control type="panel" id="510"><!--- Random Songs # Musicas Random/Faixas -->
 	<include>panel_layout</include>
 	<visible>SubString(Container(9000).ListItem.Property(id),music) + SubString(skin.string(mfmusic_list),randomsong)</visible>
 	<content>
@@ -2761,7 +3011,7 @@
 	</item>
 	</content>
 	</control>
-	<control type="panel" id="510"><!--- Musicas Random/Albums -->
+	<control type="panel" id="510"><!--- Random Albums # Musicas Random/Albums -->
 	<include>panel_layout</include>
 	<visible>SubString(Container(9000).ListItem.Property(id),music) + SubString(skin.string(mfmusic_list),randomalbum)</visible>
 	<content>
@@ -2928,7 +3178,7 @@
 	</item>
 	</content>
 	</control>
-	<control type="panel" id="510"><!--- Musicas Random/Artistas -->
+	<control type="panel" id="510"><!--- Random Artists # Musicas Random/Artistas -->
 	<include>panel_layout</include>
 	<visible>SubString(Container(9000).ListItem.Property(id),music) + SubString(skin.string(mfmusic_list),randomartist)</visible>
 	<content>
@@ -3059,7 +3309,7 @@
 	</item>
 	</content>
 	</control>
-	<control type="panel" id="510"><!--- Musicas Em Progresso -->
+	<control type="panel" id="510"><!--- Music In Progress # Musicas Em Progresso -->
 	<include>panel_layout</include>
 	<visible>SubString(Container(9000).ListItem.Property(id),music) + SubString(skin.string(mfmusic_list),inprogress)</visible>
 	<content>
@@ -3228,7 +3478,7 @@
 	</control>
 	</control>
 	</include>
-	<!-- ################################################################################ Meu Menu 1 ################################################################################ -->
+	<!-- ################################################################################# Youtube ################################################################################ -->
 	<include name="mf_contentmymenu1">
 	<control type="image"><!-- Fundo -->
     <include>widgets_back</include>
@@ -3317,18 +3567,18 @@
 	</control>
 	</control>
 	</include>
-<!-- ################################################################################ Youtube ################################################################################ -->
-	<include name="mf_contentyoutube">
-	<control type="image">
+<!-- ################################################################################ Meu Menu 2 ################################################################################ -->
+	<include name="mf_contentmymenu2">
+	<control type="image"><!-- Fundo -->
     <include>widgets_back</include>
-	<visible>StringCompare(Container(9000).ListItem.Property(id),youtube)</visible>
+	<visible>StringCompare(Container(9000).ListItem.Property(id),mymenu2)</visible>
 	</control>
 	<control type="group">
 	<posx>30</posx>
 	<posy>360</posy>
-	<control type="panel" id="510"><!-- YouTube -->
+	<control type="panel" id="510"><!-- Meu Menu 2 -->
 	<include>panel_layout</include>
-	<visible>StringCompare(Container(9000).ListItem.Property(id),youtube)</visible>
+	<visible>StringCompare(Container(9000).ListItem.Property(id),mymenu2)</visible>
 	<content>
 	<item>
 	<label fallback="31014">$VAR[value_menu2201.label]</label>

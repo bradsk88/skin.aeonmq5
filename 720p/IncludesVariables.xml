@@ -3678,6 +3678,7 @@
 	<variable name="value_bgcustom">
 	<value condition="SubString(Container(9000).ListItem.Property(id),movie)">$VAR[value_menutheme_movies]</value>
 	<value condition="SubString(Container(9000).ListItem.Property(id),tvshow)">$VAR[value_menutheme_tvshows]</value>
+	<value condition="SubString(Container(9000).ListItem.Property(id),youtube)">$VAR[value_menutheme_youtube]</value>
 	<value condition="SubString(Container(9000).ListItem.Property(id),concert)">$VAR[value_menutheme_concerts]</value>
 	<value condition="SubString(Container(9000).ListItem.Property(id),music)">$VAR[value_menutheme_music]</value>
 	<value condition="SubString(Container(9000).ListItem.Property(id),live)">$VAR[value_menutheme_livetv]</value>
@@ -3716,6 +3717,16 @@
 	<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/tvshows.jpg</value>
 	<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,tvshows]</value>
 	<value condition="Skin.HasSetting(randomtvshowbg)">special://userdata/addon_data/script.artworkorganizer/TVShowFanart</value>
+	</variable>
+	<variable name="value_menutheme_youtube">
+	<value condition="SubString(skin.string(theme),coral)">special://skin/backgrounds/youtube.jpg</value>
+	<value condition="SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/youtube.jpg</value>
+	<value condition="SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/youtube.jpg</value>
+	<value condition="SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/youtube.jpg</value>
+	<value condition="SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/youtube.jpg</value>
+	<value condition="SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/youtube.jpg</value>
+	<value condition="SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/youtube.jpg</value>
+	<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,youtube]</value>
 	</variable>
 	<variable name="value_menutheme_concerts">
 	<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),coral)">special://skin/backgrounds/concerts.jpg</value>

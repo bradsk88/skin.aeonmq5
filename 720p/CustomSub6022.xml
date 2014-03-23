@@ -1,6 +1,6 @@
 	<!-- Aeon MQ 5 -->
 
-	<window id="6022" type="dialog"><!-- Meu Menu 2 -->
+	<window id="6022" type="dialog"><!-- YouTube -->
 	<defaultcontrol>-</defaultcontrol>
 	<include>SubMenuCommon</include>
 	<controls>

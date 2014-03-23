@@ -1571,11 +1571,11 @@
 	<include>DefaultReset</include>
 	</item>
 	<item>
-	<label>$LOCALIZE[32001]</label><!-- Meu Menu 2 --><!-- 6022 -->
+	<label>$LOCALIZE[32001]</label><!-- YouTube --><!-- 6022 -->
 	<label2>$LOCALIZE[32001]</label2>
 	<property name="id">custom</property>
 	<onclick>Skin.SetString($INFO[skin.string(custom_master)],youtube)</onclick>
-	<onclick>Skin.SetString($INFO[skin.string(custom_action)],SetFocus(510))</onclick>
+	<onclick>Skin.SetString($INFO[skin.string(custom_action)],RunAddon(plugin.video.youtube))</onclick>
 	<include>DefaultReset</include>
 	</item>
 	<item>
@@ -4548,7 +4548,7 @@
 	<label>31159</label>
 	<onclick>SetFocus(453)</onclick>
 	<onright>SetFocus(453)</onright>
-	<visible>![Skin.HasSetting(submode) | StringCompare(Container(9000).ListItem.Property(id),mymenu1) | StringCompare(Container(9000).ListItem.Property(id),mymenu2) | StringCompare(Container(9000).ListItem.Property(id),virtual)]</visible>
+	<visible>![Skin.HasSetting(submode) | StringCompare(Container(9000).ListItem.Property(id),mymenu1) | StringCompare(Container(9000).ListItem.Property(id),youtube) | StringCompare(Container(9000).ListItem.Property(id),virtual)]</visible>
 	</control>
 	<control type="button" id="115"><!-- Copiar propriedades -->
 	<include>CustomMenuButton</include>

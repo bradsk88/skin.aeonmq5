@@ -530,6 +530,7 @@
 	<onfocus>Skin.SetString(mfmovies_list,latest)</onfocus>
 	<onfocus>Skin.SetString(mfconcerts_list,latest)</onfocus>
 	<onfocus>Skin.SetString(mftvshows_list,latest)</onfocus>
+	<onfocus>Skin.SetString(mfyoutube_list,newsubs)</onfocus>
 	<onfocus>Skin.SetString(mfmusic_list,latestalbum)</onfocus>
 	<onfocus>Skin.SetString(mfvpl1_list,latest)</onfocus>
 	<onfocus>Skin.SetString(mfvpl2_list,latest)</onfocus>

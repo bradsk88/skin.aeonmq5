@@ -3577,14 +3577,14 @@
 	<include>Animation_Widgets</include>
 	<visible>SubString(Container(9000).ListItem.Property(id),youtube)</visible>
 	<control type="button" id="5100">
-	<onclick>SetFocus(5111)</onclick>
+	<onclick>SetFocus(5323)</onclick>
 	<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
 	<include condition="Skin.HasSetting(higherwidgets)">widgets_selectorhigher</include>
-	<label>$VAR[value_mflistmode_tvshow]</label>	
+	<label>$VAR[value_mflistmode_youtube]</label>	
 	</control>
     <include>widgets_led</include>
 	</control>
-	<control type="button" id="5111">
+	<control type="button" id="5323">
 	<include>InvisibleButton</include>
 	<onfocus condition="SubString(skin.string(mfyoutube_list),newsubs)">Skin.SetString(mfyoutube_list,suggests)</onfocus>
 	<onfocus condition="SubString(skin.string(mfyoutube_list),suggests)">Skin.SetString(mfyoutube_list,newsubs)</onfocus>
@@ -3597,6 +3597,7 @@
 	<control type="panel" id="510"><!-- New Subscription Videos -->
 	<include>panel_layout</include>
 	<visible>SubString(Container(9000).ListItem.Property(id),youtube) + SubString(skin.string(mfyoutube_list),newsubs)</visible>
+	<visible>true</visible>
 	<content>
 	<item>
 	<label>[COLOR=$VAR[value_menucolorlabel]]$LOCALIZE[31665] - [/COLOR]$INFO[Window(0).Property(RecommendedEpisode.1.Title)]</label>

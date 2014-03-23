@@ -4,7 +4,8 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<include condition="!Skin.HasSetting(fix3)">Quickfix</include>
-	<onload condition="!StringCompare(skin.string(defaultsettings),2)">SetFocus(900)</onload>
+	<onload>Skin.SetString(mfyoutube_list,newsubs)</onload><!--TODO: Why doesn't this work if it's in includes.xml?-->
+	<onload condition="!StringCompare(skin.string(defaultsettings),2)">-->SetFocus(900)</onload>
 	<onload condition="Player.HasAudio + System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow)</onload>
 	<onload condition="System.HasAddon(script.favourites) + ![IsEmpty(skin.string(favouriteswidget)) | Skin.HasSetting(nofavouriteswidget)]">RunScript(script.favourites)</onload>
 	<onload condition="Skin.HasSetting(rcbgames)">RunScript(script.games.rom.collection.browser,limit=12)</onload>

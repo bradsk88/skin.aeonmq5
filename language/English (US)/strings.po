@@ -4221,3 +4221,11 @@ msgstr "NEW EPISODES"
 msgctxt "#32001"
 msgid "YouTube"
 msgstr "YouTube"
+
+msgctxt "#32002"
+msgid "NEW SUBSCRIPTION VIDEOS"
+msgstr "NEW SUBSCRIPTION VIDEOS"
+
+msgctxt "#32003"
+msgid "YOUTUBE SUGGESTS"
+msgstr "YOUTUBE SUGGESTS"

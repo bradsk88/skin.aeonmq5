@@ -1833,6 +1833,10 @@
 	<value condition="SubString(skin.string(mftvshows_list),inprogress)">$LOCALIZE[31585]</value>
 	<value condition="SubString(skin.string(mftvshows_list),aired)">$LOCALIZE[32000]</value>
 	</variable>
+	<variable name="value_mflistmode_youtube">
+	<value condition="SubString(skin.string(mfyoutube_list),newsubs)">$LOCALIZE[32002]</value>
+	<value condition="SubString(skin.string(mfyoutube_list),suggests)">$LOCALIZE[32003]</value>
+	</variable>
 	<variable name="value_mflistmode_concert">
 	<value condition="SubString(skin.string(mfconcerts_list),latest)">$LOCALIZE[31583]</value>
 	<value condition="SubString(skin.string(mfconcerts_list),random)">$LOCALIZE[31584]</value>
